@@ -54,6 +54,7 @@
                 app:errorEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etfirstname"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -68,6 +69,7 @@
                 app:errorEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etlastname"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -81,6 +83,7 @@
             app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etemail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColorHint="#616161"
@@ -95,6 +98,7 @@
             app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etphone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColorHint="#616161" />
@@ -108,6 +112,7 @@
             app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPass"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColorHint="#616161" />
@@ -121,6 +126,7 @@
             app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etconPass"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -130,19 +136,19 @@
             android:layout_height="wrap_content">
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/next_button"
+                android:id="@+id/nextbutton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:text="REGISTER" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/cancel_button"
+                android:id="@+id/cancelbutton"
                 style="@style/Widget.MaterialComponents.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="12dp"
-                android:layout_toStartOf="@id/next_button"
+                android:layout_toStartOf="@id/nextbutton"
                 android:text="@string/button_cancel" />
 
         </RelativeLayout>

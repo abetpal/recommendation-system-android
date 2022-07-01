@@ -1,9 +1,9 @@
 package com.myproject.Recommendations
 
+import ApiRelated.RetrofitClient
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
 import android.widget.Toast
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
@@ -27,16 +27,46 @@ class LoginPage : AppCompatActivity() {
 
         btnLogin.setOnClickListener {
 
-            val enterUser = editUser.text.toString()
-            val enterPass = editPass.text.toString()
+//            val email = editUser.text.toString()
+//            val password = editPass.text.toString().toInt()
 
-            if((enterUser==validUser) && (enterPass==validPass)){
-                val intent = Intent (this@LoginPage,MainActivity::class.java)
-                startActivity(intent)
+            val res = RetrofitClient.instance.getQuotes().body()?.count.toString()
+            if (res != null) {
+                Toast.makeText(applicationContext, res, Toast.LENGTH_LONG).show()
             }
             else{
-                Toast.makeText(this@LoginPage,"Wrong Credentials",Toast.LENGTH_SHORT).show()
+                Toast.makeText(applicationContext, "No output", Toast.LENGTH_LONG).show()
             }
+
+//            RetrofitClient.instance.login(email, password)
+//                .enqueue(object : Callback<ResponseBody> {
+//                    override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+////                        if(response.body()?.message == "success"){
+////                            val intent = Intent(applicationContext, MainActivity::class.java)
+////                            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+////
+////                            startActivity(intent)
+////                        }
+////                        else{
+////                            Toast.makeText(applicationContext, "hello",Toast.LENGTH_LONG).show()
+////                        }
+//                        val res = response.body().toString()
+//                        Toast.makeText(applicationContext, res, Toast.LENGTH_LONG).show()
+//                    }
+//
+//                    override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+//                        Toast.makeText(applicationContext, "Failed", Toast.LENGTH_LONG).show()
+//                    }
+//
+//                })
+
+//            if((enterUser==validUser) && (enterPass==validPass)){
+//                val intent = Intent (this@LoginPage,MainActivity::class.java)
+//                startActivity(intent)
+//            }
+//            else{
+//                Toast.makeText(this@LoginPage,"Wrong Credentials",Toast.LENGTH_SHORT).show()
+//            }
         }
         btnNewReg.setOnClickListener {
             val intent = Intent (this@LoginPage, RegisterAct::class.java)
